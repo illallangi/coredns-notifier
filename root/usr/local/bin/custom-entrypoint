@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+mkdir -p /etc/coredns/zones
+
+confd -onetime -backend env || exit 1
+
+cat /etc/coredns/Corefile
+
+exec $@
