@@ -1,5 +1,5 @@
 # Main image
-FROM docker.io/coredns/coredns:1.8.4
+FROM docker.io/coredns/coredns:1.9.0
 
 COPY ./root /
 
