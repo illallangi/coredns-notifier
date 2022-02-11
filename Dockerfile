@@ -3,6 +3,8 @@ FROM docker.io/coredns/coredns:1.8.4
 
 COPY ./root /
 
+CMD ["-conf", "/etc/coredns/Corefile"]
+
 ARG VCS_REF
 ARG VERSION
 ARG BUILD_DATE
