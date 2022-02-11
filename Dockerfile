@@ -43,11 +43,11 @@ ARG BUILD_DATE
 LABEL maintainer="Andrew Cole <andrew.cole@illallangi.com>" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.description="TODO: Specify Description" \
-      org.label-schema.name="dnsrpzrecord-coredns" \
+      org.label-schema.name="coredns-notifier" \
       org.label-schema.schema-version="1.0" \
-      org.label-schema.url="http://github.com/illallangi/dnsrpzrecord-controller" \
-      org.label-schema.usage="https://github.com/illallangi/dnsrpzrecord-controller/blob/master/README.md" \
+      org.label-schema.url="http://github.com/illallangi/coredns-notifier" \
+      org.label-schema.usage="https://github.com/illallangi/coredns-notifier/blob/master/README.md" \
       org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/illallangi/dnsrpzrecord-coredns" \
+      org.label-schema.vcs-url="https://github.com/illallangi/coredns-notifier" \
       org.label-schema.vendor="Illallangi Enterprises" \
       org.label-schema.version=$VERSION
