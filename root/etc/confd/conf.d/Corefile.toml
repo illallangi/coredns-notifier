@@ -1,0 +1,6 @@
+[template]
+src  = "Corefile.tmpl"
+dest = "/etc/coredns/Corefile"
+keys = [
+    "/transfer"
+]
