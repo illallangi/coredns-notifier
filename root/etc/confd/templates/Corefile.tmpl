@@ -11,6 +11,8 @@
   reload
   loadbalance
   transfer {
-    to {$TRANSFER}
+{{ range $i, $e := (split (getv "/transfer") ";") }}
+    to {{ $e }}
+{{ end }}
   }
 }
