@@ -2,7 +2,7 @@
 FROM docker.io/coredns/coredns:1.9.0 as coredns
 
 # builder image - compile confd
-FROM docker.io/library/golang:1.9-alpine as confd
+FROM docker.io/library/golang:1.9.7-stretch as confd
 
 ARG CONFD_VERSION=0.16.0
 
@@ -13,10 +13,6 @@ RUN mkdir -p /go/src/github.com/kelseyhightower/confd
 WORKDIR /go/src/github.com/kelseyhightower/confd
 
 RUN \
-  apk add --no-cache \
-    bzip2=1.0.6-r7 \
-    make=4.2.1-r2 \
-  && \
   tar --strip-components=1 -zxf /tmp/v${CONFD_VERSION}.tar.gz && \
   go install github.com/kelseyhightower/confd && \
   rm -rf /tmp/v${CONFD_VERSION}.tar.gz
