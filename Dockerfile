@@ -14,8 +14,9 @@ WORKDIR /go/src/github.com/kelseyhightower/confd
 
 RUN \
   apk add --no-cache \
-    bzip2 \
-    make && \
+    bzip2=1.0.6-r7 \
+    make=4.2.1-r2 \
+  && \
   tar --strip-components=1 -zxf /tmp/v${CONFD_VERSION}.tar.gz && \
   go install github.com/kelseyhightower/confd && \
   rm -rf /tmp/v${CONFD_VERSION}.tar.gz
