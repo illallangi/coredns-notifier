@@ -37,7 +37,7 @@ RUN \
   apt-get install -y \
     musl=1.1.21-2 \
   && \
-  apt-get clean
+    rm -rf /var/lib/apt/lists/*
 
 COPY root/ /
 ENTRYPOINT ["custom-entrypoint"]
