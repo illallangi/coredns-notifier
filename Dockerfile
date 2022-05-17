@@ -29,7 +29,7 @@ RUN \
   apt-get update \
   && \
   apt-get install -y \
-    musl \
+    musl=1.1.21-2 \
   && \
   apt-get clean
 
