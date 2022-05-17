@@ -1,5 +1,5 @@
 # coredns image
-FROM docker.io/coredns/coredns:1.9.0 as coredns
+FROM docker.io/coredns/coredns:1.9.2 as coredns
 
 # builder image - compile confd
 FROM docker.io/library/golang:1.9.7-stretch as confd
