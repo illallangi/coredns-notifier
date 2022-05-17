@@ -1,3 +1,6 @@
+# coredns image
+FROM docker.io/coredns/coredns:1.9.0 as coredns
+
 # builder image - compile confd
 FROM docker.io/library/golang:1.9-alpine as confd
 
@@ -24,7 +27,7 @@ FROM docker.io/library/debian:buster-20220509
 COPY --from=confd /go/bin/confd /usr/local/bin/confd
 
 # install coredns from docker hub image
-COPY --from=docker.io/coredns/coredns:1.9.0 /coredns /usr/local/bin/coredns
+COPY --from=coredns /coredns /usr/local/bin/coredns
 
 # install prerequisites
 RUN \
