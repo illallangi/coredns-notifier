@@ -31,12 +31,11 @@ COPY --from=confd /go/bin/confd /usr/local/bin/confd
 COPY --from=coredns /coredns /usr/local/bin/coredns
 
 # install prerequisites
-RUN \
-  apt-get update \
-  && \
-  apt-get install -y \
-    musl=1.1.21-2 \
-  && \
+RUN apt-get update \
+    && \
+    apt-get install -y --no-install-recommends \
+      musl=1.1.21-2 \
+    && \
     rm -rf /var/lib/apt/lists/*
 
 COPY root/ /
