@@ -1,5 +1,5 @@
 # builder image - compile confd
-FROM golang:1.9-alpine as confd
+FROM docker.io/library/golang:1.9-alpine as confd
 
 ARG CONFD_VERSION=0.16.0
 
