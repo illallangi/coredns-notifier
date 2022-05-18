@@ -2,20 +2,7 @@
 FROM docker.io/coredns/coredns:1.9.2 as coredns
 
 # builder image - compile confd
-FROM docker.io/library/golang:1.9.7-stretch as confd
-
-ARG CONFD_VERSION=0.16.0
-
-ADD https://github.com/kelseyhightower/confd/archive/v${CONFD_VERSION}.tar.gz /tmp/
-
-RUN mkdir -p /go/src/github.com/kelseyhightower/confd
-
-WORKDIR /go/src/github.com/kelseyhightower/confd
-
-RUN \
-  tar --strip-components=1 -zxf /tmp/v${CONFD_VERSION}.tar.gz && \
-  go install github.com/kelseyhightower/confd && \
-  rm -rf /tmp/v${CONFD_VERSION}.tar.gz
+FROM ghcr.io/illallangi/confd-builder:v0.0.3 as confd
 
 # main image
 FROM docker.io/library/debian:buster-20220509
