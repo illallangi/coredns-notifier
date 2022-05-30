@@ -1,5 +1,5 @@
 # coredns image
-FROM docker.io/coredns/coredns:1.9.2 as coredns
+FROM docker.io/coredns/coredns:1.9.3 as coredns
 
 # builder image - compile confd
 FROM ghcr.io/illallangi/confd-builder:v0.0.3 as confd
