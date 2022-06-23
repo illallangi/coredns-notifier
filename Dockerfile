@@ -5,7 +5,7 @@ FROM docker.io/coredns/coredns:1.9.3 as coredns
 FROM ghcr.io/illallangi/confd-builder:v0.0.3 as confd
 
 # main image
-FROM docker.io/library/debian:buster-20220527
+FROM docker.io/library/debian:buster-20220622
 
 # install confd from builder image
 COPY --from=confd /go/bin/confd /usr/local/bin/confd
